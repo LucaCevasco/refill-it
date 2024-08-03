@@ -6,18 +6,8 @@ import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Menu } from "~~/components/sections/Menu";
 import { UserShowcase } from "~~/components/sections/UserShowcase";
 
-// import deployedContracts from "~~/contracts/deployedContracts";
-
 // TODO agregar metadata en todas las paginas
 const Home: NextPage = () => {
-  // const { address: connectedAddress } = useAccount();
-  // const { writeContract } = useWriteContract();
-  // writeContract({
-  //   address: deployedContracts[31337].YourContract.address,
-  //   abi: deployedContracts[31337].YourContract.abi,
-  //   functionName: "setGreeting",
-  //   args: ['Hello world!']
-  // })
   return (
     <>
       <UserShowcase />

@@ -1,8 +1,13 @@
 import React from "react";
 
-export const Select = ({ label, options }: { label: string; options: string[] }) => {
+interface SelectProps extends React.HTMLProps<HTMLSelectElement> {
+  label: string;
+  options: string[];
+}
+
+export const Select = ({ label, options, ...props }: SelectProps) => {
   return (
-    <select className="select select-primary w-48">
+    <select className="select select-primary w-52" {...props}>
       <option disabled selected>
         {label}
       </option>
