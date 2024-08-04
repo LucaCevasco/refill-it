@@ -21,7 +21,7 @@ export const Menu = () => {
           </Button>
           <Button onClick={() => handleNavigate("/retrieve")}>
             <CoffeeCup className="h-4 w-4 self-center mr-2" />
-            Retrieve Cup
+            Generate QR (Coffee shop)
           </Button>
           <Button onClick={() => handleNavigate("/leaderboard")}>
             <TrophyIcon className="h-4 w-4 self-center mr-2" />
