@@ -12,7 +12,7 @@ import { useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { useGlobalState } from "~~/services/store/store";
 import { ASSETS } from "~~/utils/scaffold-eth/common";
 
-export const CUP_COST = 2;
+const CUP_COST = 2;
 
 const Withdraw: NextPage = () => {
   const router = useRouter();

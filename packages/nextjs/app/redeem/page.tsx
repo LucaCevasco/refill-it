@@ -2,12 +2,12 @@
 
 import React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { CUP_COST } from "../withdraw/page";
 import { NextPage } from "next";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
+const CUP_COST = 2;
 const Redeem: NextPage = () => {
   const router = useRouter();
   const { address: connectedAddress } = useAccount();
