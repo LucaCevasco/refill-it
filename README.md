@@ -1,3 +1,131 @@
+# ReFillIt
+
+ReFillIt is a decentralized application (dApp) designed to incentivize environmentally-friendly behavior by allowing users to earn rewards for returning used items, such as coffee cups. The project utilizes smart contracts deployed on the blockchain, a frontend built with Next.js, TypeScript, and the Wagmi library to interact with Ethereum.
+
+## Project Overview
+
+### Smart Contracts
+#### For more detail visit the smart contract repo https://github.com/cloud1992/ReFillItLendingToken
+#### ReFillToken
+
+ReFillToken is a smart contract built on Ethereum that allows users to supply underlying tokens to the Aave v3 protocol, receive ReFill tokens in return, and later redeem these ReFill tokens to recover their underlying tokens.
+
+##### Contract Overview
+
+The ReFillToken contract is implemented using Solidity and is compatible with the ERC-20 standard. This contract interacts with the Aave v3 protocol to deposit and withdraw underlying tokens, enabling users to provide liquidity while earning interest is assigned to the protocol's reserves.
+
+##### Key Functions
+
+- **supply**: Allows users to deposit underlying tokens and receive ReFill tokens in proportion to the deposited amount and the current exchange rate.
+- **redeem**: Enables users to redeem their ReFill tokens to recover underlying tokens along with accrued interest. Redemption can be done to the sender's address or a specified address.
+- **removeReserves**: Only accessible by the contract owner. Allows the withdrawal of funds from the protocol's reserves, which have accumulated through the exchange rate mechanism.
+
+##### Interaction with Aave v3
+
+The ReFillToken contract uses the `IPool` and `IWETHGateway` interfaces from Aave v3 to perform deposits and withdrawals of underlying tokens. Depending on whether the underlying token is native to the network (e.g., ETH) or not, the contract interacts with Aave differently:
+
+- For native tokens, it uses the `IWETHGateway` to convert and deposit the corresponding value into the Aave protocol.
+- For non-native tokens, it directly supplies and withdraws underlying tokens through `IPool`.
+
+##### Exchange Rate and Reserves
+
+- The exchange rate (`_exchangeRate`) is a value that determines how many ReFill tokens are minted for each underlying token deposited.
+- The contract maintains reserves (`_totalReserves`) that can be withdrawn using the `removeReserves` function by the contract owner.
+
+### Frontend
+
+The frontend of ReFillIt is built with Next.js and TypeScript, providing a responsive and user-friendly interface for interacting with the smart contracts. The Wagmi library is used to manage blockchain interactions, such as connecting wallets and sending transactions.
+
+Key components:
+- **Home Page**: Provides links to different features of the dApp, such as debugging contracts and exploring transactions.
+- **Success Page**: Displays a confirmation message after a successful transaction.
+- **Withdraw Page**: Allows users to select an asset and amount to withdraw from the smart contract.
+
+## Tech Stack
+
+- **Smart Contracts**: Solidity, Aave v3, Hardhat
+- **Frontend**: Next.js, TypeScript, React
+- **Blockchain Interaction**: Wagmi, ethers.js
+
+## Installation and Setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/)
+- [Yarn](https://yarnpkg.com/)
+- [Hardhat](https://hardhat.org/)
+
+### Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/ReFillIt.git
+    cd ReFillIt
+    ```
+
+2. Install the dependencies:
+    ```bash
+    yarn install
+    ```
+
+3. Compile the smart contracts:
+    ```bash
+    yarn compile
+    ```
+
+### Running the Project
+
+1. Start the development server for the frontend:
+    ```bash
+    yarn dev
+    ```
+
+2. Deploy the smart contracts to a local blockchain:
+    ```bash
+    yarn hardhat node
+    yarn hardhat run scripts/deploy.js --network localhost
+    ```
+
+3. Access the application at `http://localhost:3000`.
+
+## Usage
+
+### Interacting with the dApp
+
+- **Home Page**: Navigate through the app’s features like Debug Contracts and Block Explorer.
+- **Success Page**: After completing a transaction, you will see a success message and be able to return to the home page.
+- **Withdraw Page**: Choose an asset and enter an amount to withdraw your earnings.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request to discuss changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🏗 Scaffold-ETH 2
 
 <h4 align="center">
