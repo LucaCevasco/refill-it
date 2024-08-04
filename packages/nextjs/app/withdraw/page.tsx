@@ -75,13 +75,13 @@ const Withdraw: NextPage = () => {
     <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
       <div className="flex flex-col bg-base-100 px-10 py-10 items-center max-w-xs rounded-3xl text-center">
         <div className="flex justify-center items-center space-x-2 flex-row sm:flex-row">
-          <div className="flex flex-col bg-base-100 px-10 py-10 gap-5 text-center items-center max-w-xs rounded-3xl">
+          <div className="flex flex-col bg-base-100 px-10 pt-10 gap-5 text-center items-center max-w-xs rounded-3xl">
             <Select label="Asset" options={["ETH", "USDC"]} value={asset} onChange={changeAsset} />
             <Input type="number" label="Amount" disabled={true} value={CUP_COST} />
             {asset === "ETH" ? `ETH Price: ${(2 / nativeCurrencyPrice).toString()}` : null}
           </div>
         </div>
-        <div className="flex flex-col bg-base-100 px-10  gap-5 text-center items-center max-w-xs rounded-3xl">
+        <div className="flex flex-col bg-base-100 px-10 gap-5 text-center items-center max-w-xs rounded-3xl">
           <Button onClick={handleWithdraw} disabled={!asset} loading={isPending || isPendingNative}>
             Withdraw cup
           </Button>

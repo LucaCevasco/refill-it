@@ -16,11 +16,11 @@ export const Menu = () => {
         <div className="flex flex-col bg-base-100 px-10 pb-10 text-center items-center max-w-xs rounded-3xl">
           <Button onClick={() => handleNavigate("/withdraw")}>
             <QrCodeIcon className="h-4 w-4 self-center mr-2" />
-            Withdraw Cup
+            Get the Cup
           </Button>
           <Button onClick={() => handleNavigate("/retrieve")}>
             <CoffeeCup className="h-4 w-4 self-center mr-2" />
-            Generate QR (Coffee shop)
+            Return the cup QR (Coffee shop)
           </Button>
           <Button onClick={() => handleNavigate("/leaderboard")}>
             <TrophyIcon className="h-4 w-4 self-center mr-2" />
