@@ -10,6 +10,13 @@ ReFillIt is a decentralized application (dApp) designed to incentivize environme
 
 ReFillToken is a smart contract built on Ethereum that allows users to supply underlying tokens to the Aave v3 protocol, receive ReFill tokens in return, and later redeem these ReFill tokens to recover their underlying tokens.
 
+User can use ETH or USDC to supply.
+
+## Deployed Contracts in Scroll-Sepolia
+ReFillTokenNative: 0xa3f7bf5b0fa93176c260bba57cee85525de2baf4
+
+ReFillTokenUSDC: 0x25a1df485cfbb93117f12fc673d87d1cddeb845a
+
 ##### Contract Overview
 
 The ReFillToken contract is implemented using Solidity and is compatible with the ERC-20 standard. This contract interacts with the Aave v3 protocol to deposit and withdraw underlying tokens, enabling users to provide liquidity while earning interest is assigned to the protocol's reserves.
