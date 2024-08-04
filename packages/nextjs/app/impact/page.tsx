@@ -18,7 +18,7 @@ const Impact: NextPage = () => {
   // TODO share on social media
   return (
     <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
-      <GlobeAmericasIcon className="h-48 w-48 bg-gradient-to-r from-primary to-secondary text-white p-2 rounded-full" />
+      <GlobeAmericasIcon className="h-48 w-48 bg-gradient-to-r from-primary to-secondary text-primary p-2 rounded-full" />
       <div>
         <p className="text-center">You have saved {savedCoups} cups trought the app</p>
         <p className="text-center">You are in the top {userPctg}% of the more active users in the app</p>
