@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { NextPage } from "next";
 import { parseUnits } from "viem";
 import { useAccount } from "wagmi";
+import Button from "~~/components/base/Button";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const CUP_COST = 2;
@@ -16,18 +17,17 @@ const Redeem: NextPage = () => {
     functionName: "balanceOf",
     args: [connectedAddress],
   });
-  const { data: nativeSuppliedBalance } = useScaffoldReadContract({
-    contractName: "ReFillTokenNative",
-    functionName: "balanceOf",
-    args: [connectedAddress],
-  });
+  // const { data: nativeSuppliedBalance } = useScaffoldReadContract({
+  //   contractName: "ReFillTokenNative",
+  //   functionName: "balanceOf",
+  //   args: [connectedAddress],
+  // });
 
-  const { writeContractAsync: writeNative, isPending: isPendingNative } = useScaffoldWriteContract("ReFillTokenNative");
+  // const { writeContractAsync: writeNative, isPending: isPendingNative } = useScaffoldWriteContract("ReFillTokenNative");
   const { writeContractAsync: writeUSDC, isPending: isPendingUSDC } = useScaffoldWriteContract("ReFillToken");
   const searchParams = useSearchParams();
 
   const handleRedeem = async () => {
-    console.log({ connectedAddress, writeNative, writeUSDC, usdcSuppliedBalance, nativeSuppliedBalance });
     if (usdcSuppliedBalance) {
       await writeUSDC(
         {
@@ -73,15 +73,13 @@ const Redeem: NextPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      {isPendingNative || isPendingUSDC ? (
+      {isPendingUSDC ? (
         <>
           <h1 className="text-3xl font-bold my-5">Redeeming your cup</h1>
           <span className="loading loading-spinner loading-xl"></span>
         </>
       ) : (
-        <button className="text-3xl font-bold my-5" onClick={handleRedeem}>
-          Redeem your cup!
-        </button>
+        <Button onClick={handleRedeem}>Redeem your cup!</Button>
       )}
     </div>
   );
