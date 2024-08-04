@@ -1,6 +1,6 @@
-# ReFillIt
+# Refill-IT
 
-ReFillIt is a decentralized application (dApp) designed to incentivize environmentally-friendly behavior by allowing users to earn rewards for returning used items, such as coffee cups. The project utilizes smart contracts deployed on the blockchain, a frontend built with Next.js, TypeScript, and the Wagmi library to interact with Ethereum.
+Refill-IT is a decentralized application (dApp) designed to incentivize environmentally-friendly behavior by allowing users to earn rewards for returning used items, such as coffee cups. The project utilizes smart contracts deployed on the scroll-sepolia blockchain, a frontend built with Next.js, TypeScript, and the Wagmi library to interact with Ethereum.
 
 ## Project Overview
 
