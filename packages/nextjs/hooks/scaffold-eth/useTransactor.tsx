@@ -73,7 +73,9 @@ export const useTransactor = (_walletClient?: WalletClient): TransactionFunc => 
 
       const transactionReceipt = await publicClient.waitForTransactionReceipt({
         hash: transactionHash,
-        confirmations: options?.blockConfirmations,
+        confirmations: 1,
+        retryCount: 120,
+        timeout: 0,
       });
       notification.remove(notificationId);
 
