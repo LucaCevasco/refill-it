@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = process.env.VERCEL_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
 
 export const useQR = (userAddress: string, tokenAmount: string) =>
   useQuery({
