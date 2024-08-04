@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const useQR = (userAddress: string, tokenAmount: string) =>
   useQuery({
@@ -18,7 +18,7 @@ export const useQR = (userAddress: string, tokenAmount: string) =>
       });
       const qrResponse = await qr.json();
       const redirectUrl = BASE_URL
-        ? `https://${BASE_URL}/redeem?signature${qrResponse.signature}&nonce=${qrResponse.nonce}`
+        ? `${BASE_URL}/redeem?signature${qrResponse.signature}&nonce=${qrResponse.nonce}`
         : `http://localhost:3000/redeem?signature=${qrResponse.signature}&nonce=${qrResponse.nonce}`;
       return redirectUrl;
     },
