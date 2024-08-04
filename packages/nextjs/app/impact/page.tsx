@@ -15,7 +15,7 @@ const Impact: NextPage = () => {
     router.replace("/");
   };
 
-  // TODO do share on social media
+  // TODO share on social media
   return (
     <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
       <GlobeAmericasIcon className="h-48 w-48 bg-gradient-to-r from-primary to-secondary text-white p-2 rounded-full" />

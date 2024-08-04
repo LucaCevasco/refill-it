@@ -25,18 +25,18 @@ const page = () => {
         <tbody>
           {/* row 1 */}
           <tr className="hover">
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
+            <td>0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266</td>
+            <td>9</td>
           </tr>
           {/* row 2 */}
           <tr className="hover">
-            <td>Hart Hagerty</td>
-            <td>Desktop Support Technician</td>
+            <td>0xb123dCe044EdF0a755505d9623Fba16C0F41cae9</td>
+            <td>4</td>
           </tr>
           {/* row 3 */}
           <tr className="hover">
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
+            <td>0x9E8CEC4F2F4596141B62e88966D7167E9db555aD</td>
+            <td>1</td>
           </tr>
         </tbody>
       </table>

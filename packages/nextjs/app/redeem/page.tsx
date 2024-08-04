@@ -35,7 +35,6 @@ const Redeem: NextPage = () => {
           args: [
             connectedAddress,
             BigInt(searchParams.get("nonce") as string),
-            // todo enviar valor correcto
             BigInt(parseUnits(CUP_COST.toString(), 6).toString()),
             searchParams.get("signature") as `0x${string}`,
           ],

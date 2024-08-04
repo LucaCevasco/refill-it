@@ -7,8 +7,6 @@ interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   loading?: boolean;
 }
 
-// TODO use animation
-// TODO use tailwind variants util
 const Button = ({ children, onClick, loading, outlined }: ButtonProps) => {
   const containedClasses = `bg-gradient-to-r from-primary to-secondary
        text-black p-2 px-5 rounded-xl font-semibold w-48 my-2 flex flex-row`;

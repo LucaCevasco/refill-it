@@ -4,7 +4,6 @@ import Button from "../base/Button";
 import { CoffeeCup } from "../icons/CoffeeCup";
 import { GlobeAmericasIcon, QrCodeIcon, TrophyIcon } from "@heroicons/react/24/outline";
 
-// TODO abstract routes and map them to buttons
 export const Menu = () => {
   const router = useRouter();
   const handleNavigate = (path: string) => {

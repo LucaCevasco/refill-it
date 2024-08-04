@@ -10,7 +10,7 @@ import { useQR } from "~~/apiHooks/useQR";
 const CUP_COST = "2";
 const Retrieve: NextPage = () => {
   const { address: connectedAddress } = useAccount();
-  // TODO user selects native or usdc
+  // TODO user selects native or usdc y amount
   const { data: qr, isLoading: qrLoading } = useQR(connectedAddress || "", parseUnits(CUP_COST, 6).toString());
 
   return (

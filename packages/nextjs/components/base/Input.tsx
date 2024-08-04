@@ -1,9 +1,6 @@
 import React from "react";
 import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
 
-// TODO add control value and validation
-// TODO add value in usd if is native currency
-
 // interfance input extends HTMLInputElement
 interface InputProps extends React.HTMLProps<HTMLInputElement> {
   label: string;

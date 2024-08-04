@@ -25,7 +25,6 @@ const Withdraw: NextPage = () => {
 
   const handleWithdraw = async () => {
     if (!asset) return;
-    // TODO: read if approval is needed
     if (asset === "USDC") {
       await sendUsdcwrite(
         {

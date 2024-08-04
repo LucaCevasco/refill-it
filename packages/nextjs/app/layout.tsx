@@ -7,6 +7,7 @@ import { getMetadata } from "~~/utils/scaffold-eth/getMetadata";
 export const metadata = getMetadata({
   title: "Refill-IT",
   description: "Drink coffe and save the planet",
+  imageRelativePath: "/thumbnail.jpg",
 });
 
 const ScaffoldEthApp = ({ children }: { children: React.ReactNode }) => {
