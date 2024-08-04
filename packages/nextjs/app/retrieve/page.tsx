@@ -1,22 +1,38 @@
+"use client";
+
 import React from "react";
 import { NextPage } from "next";
 import QRCode from "qrcode.react";
+import { parseUnits } from "viem";
+import { useAccount } from "wagmi";
+import { useQR } from "~~/apiHooks/useQR";
 
+const CUP_COST = "2";
 const Retrieve: NextPage = () => {
+  const { address: connectedAddress } = useAccount();
+  // TODO user selects native or usdc
+  const { data: qr, isLoading: qrLoading } = useQR(connectedAddress || "", parseUnits(CUP_COST, 6).toString());
+
   return (
     <div className="relative w-64 h-64 p-8 mt-5">
       {/* Inner container for QR code */}
       <div className="relative w-full h-full bg-navy-900 rounded-2xl flex items-center justify-center">
         {/* QR code content */}
-        <QRCode
-          value="https://www.google.com"
-          size={256}
-          bgColor="#ffffff"
-          fgColor="#000000"
-          level="Q"
-          includeMargin={false}
-          renderAs="svg"
-        />
+        {qrLoading || !qr ? (
+          <div className="flex items-center justify-center">
+            <div className="loading loading-spinner"></div>
+          </div>
+        ) : (
+          <QRCode
+            value={qr}
+            size={256}
+            bgColor="#ffffff"
+            fgColor="#000000"
+            level="Q"
+            includeMargin={false}
+            renderAs="svg"
+          />
+        )}
       </div>
 
       {/* Corner accents */}
