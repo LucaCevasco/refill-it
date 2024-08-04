@@ -3031,7 +3031,7 @@ const deployedContracts = {
   },
   534351: {
     ReFillTokenNative: {
-      address: "0x6b21b3ae41f818fc91e322b53f8d0773d31ecb75",
+      address: "0x5e5713a0d915701f464debb66015add62b2e6ae9",
       abi: [
         {
           type: "constructor",
@@ -3769,7 +3769,7 @@ const deployedContracts = {
       },
     },
     ReFillToken: {
-      address: "0x1f53e116c31f171e59f45f0752aec5d1f5aa3714",
+      address: "0x97fd63d049089cd70d9d139ccf9338c81372de68",
       abi: [
         {
           type: "constructor",
