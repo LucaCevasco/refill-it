@@ -18,7 +18,7 @@ export const useQR = (userAddress: string, tokenAmount: string) =>
       });
       const qrResponse = await qr.json();
       const redirectUrl = BASE_URL
-        ? `${BASE_URL}/redeem?signature${qrResponse.signature}&nonce=${qrResponse.nonce}`
+        ? `${BASE_URL}/redeem?signature=${qrResponse.signature}&nonce=${qrResponse.nonce}`
         : `http://localhost:3000/redeem?signature=${qrResponse.signature}&nonce=${qrResponse.nonce}`;
       return redirectUrl;
     },
